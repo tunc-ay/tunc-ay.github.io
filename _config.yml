@@ -1,10 +1,24 @@
+# Site settings
 title: Tuncay Kayaoglu
 email: "https://tunc-ay.github.io"
 description: >-
   Personal website for Tuncay Kayaoglu
-baseurl: ""
+baseurl: "" # Leave this empty for user sites
 url: "https://tunc-ay.github.io"
-twitter_username: tunkay
-github_username:  tunc-ay
 
+# Build settings
+markdown: kramdown
 theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude these files from production site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

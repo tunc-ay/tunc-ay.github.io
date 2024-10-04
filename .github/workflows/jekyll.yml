@@ -28,18 +28,25 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
-          bundler-cache: true
-          
+          ruby-version: '2.7.4' # Using an older, more stable version
+          bundler-cache: false  # Disable cache temporarily for debugging
+        
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
+      - name: Show Ruby and Bundle versions
+        run: |
+          ruby -v
+          bundle -v
+          
       - name: Install Dependencies
         run: |
-          bundle install
-          
+          bundle config set --local path 'vendor/bundle'
+          bundle install --jobs 4 --retry 3 --verbose
+        
       - name: Build site
-        run: bundle exec jekyll build
+        run: |
+          bundle exec jekyll build --trace
         env:
           JEKYLL_ENV: production
           
