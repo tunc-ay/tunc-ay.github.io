@@ -1,10 +1,18 @@
 # Site settings
-title: Tuncay Kayaoglu
+title: Tuncay Kayaoglu - Technical Writer
 email: "https://tunc-ay.github.io"
 description: >-
   Personal website for Tuncay Kayaoglu
 baseurl: "" # Leave this empty for user sites
 url: "https://tunc-ay.github.io"
+
+include:
+  - _pages
+
+header_pages:
+  - _pages/about.md
+  - _pages/projects.md
+  - _pages/contact.md
 
 # Build settings
 markdown: kramdown
