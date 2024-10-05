@@ -1,8 +1,8 @@
-# _pages/projects.md
 ---
 layout: page
-title: Projects
+title: "Projects"
 permalink: /projects/
 ---
 
-# Hello
+# Portfolio
+[Your content here]

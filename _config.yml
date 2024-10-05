@@ -1,10 +1,10 @@
 # Site settings
-title: Tuncay Kayaoglu - Technical Writer
-email: tuncaykayaoglu@yahoo.com  # Use actual email instead of website URL
+title: Tuncay Kayaoglu
+email: tuncaykayaoglu@yahoo.com
 description: >-
-  Technical writer specializing in software documentation, API documentation, 
+  Technical writer specializing in software documentation, API documentation,
   and user guides. Experienced in creating clear, concise, and user-friendly documentation.
-baseurl: "" # Leave empty for user sites
+baseurl: ""
 url: "https://tunc-ay.github.io"
 
 # Social links
@@ -16,6 +16,7 @@ linkedin_username: tuncaykayaoglu
 include:
   - _pages
 
+# Navigation links
 header_pages:
   - about.md
   - projects.md
@@ -30,7 +31,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-sitemap  # Good for SEO
+  - jekyll-sitemap
 
 # Collections
 collections:
@@ -71,3 +72,14 @@ exclude:
 # SEO settings
 lang: en
 author: Tuncay Kayaoglu
+
+# Optional: Add these for better SEO
+twitter:
+  username: tunkay
+  card: summary
+social:
+  name: Tuncay Kayaoglu
+  links:
+    - https://twitter.com/tunkay
+    - https://www.linkedin.com/in/tuncaykayaoglu
+    - https://github.com/tunc-ay

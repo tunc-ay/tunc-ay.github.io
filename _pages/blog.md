@@ -1,8 +1,8 @@
-# _pages/blog.md
 ---
 layout: page
-title: Blog
+title: "Blog"
 permalink: /blog/
 ---
 
-# Hello
+# Blog
+[Your content here]
