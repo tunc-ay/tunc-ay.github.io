@@ -9,6 +9,7 @@ I'm Tuncay Kayaoglu, a technical writer specializing in software documentation, 
 - [Project Documentation](/projects)
 - [About Me](/about)
 - [Contact](/contact)
+- [Blog](/blog)
 
 ## Recent Posts
 {% for post in site.posts limit:3 %}

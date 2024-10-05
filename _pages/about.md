@@ -7,27 +7,27 @@ permalink: /about/
 # Tuncay Kayaoglu
 ## Lead Technical Writer
 
+### Objective
+Specialized in creating high-quality technical documentation, content, and blogs that simplify complex concepts for diverse audiences. I can develop user manuals, API reference documentation (REST API), and step-by-step tutorials, as well as produce engaging technical blogs and articles.
+
 ## Resume
 
 ### Work Experience
-| Year | Title |
-| ---- | ---- |
-|June 2023 - ...	| Lead Technical Writer @ [Analog Devices](https://www.analog.com)|
-|Mar 2021 - June 2023	| Senior Technical Writer @ [Invicti](https://www.invicti.com)|
-|Jan 2020 - Mar 2021 | Technical Writer @ [Invicti](https://www.invicti.com)|
-|Nov 2018 - Jan 2020 | Freelance Content Editor |
-|Aug 2014 - Jan 2020 | Contributing Editor @ [SiberBulten](http://siberbulten.com) |
-|Dec 2016 - Nov 2019 | Ghostwriter @ [LifebookUK](https://www.lifebookuk.com/)|
-|Jan 2016 - Jan 2019 | Freelance Translator |
-|Aug 2013 - Aug 2016 | Senior Reporter @ [Anadolu Agency](https://www.aa.com.tr/en)|
-|Aug 2012 - Aug 2013 | Tokyo Correspondent - Freelance|
-|Jul 2004 - Aug 2012 | Journalist |
+
+| Year                | Title                                                                 |
+| ------------------- | --------------------------------------------------------------------- |
+| June 2023 - Present | Lead Technical Writer @ [Analog Devices](https://www.analog.com)      |
+| Mar 2021 - June 2023 | Senior Technical Writer @ [Invicti](https://www.invicti.com)         |
+| Jan 2020 - Mar 2021 | Technical Writer @ [Invicti](https://www.invicti.com)                |
+| Nov 2018 - Jan 2020  | Freelance Content Editor @ Content Go                               |
+| Aug 2014 - Jan 2020  | Contributing Editor @ [SiberBulten](http://siberbulten.com)          |
+| Aug 2013 - Aug 2016  | Senior Reporter @ [Anadolu Agency](https://www.aa.com.tr/en)         |
+| Aug 2012 - Aug 2013  | Tokyo Correspondent - Freelance                                      |
+| Jul 2004 - Aug 2012  | Journalist                                                          |
 
 ### Education
-| Year | Title |
-| ---- | ---- |
-|2017 | Copy editing @ [UC Berkeley Extension](https://extension.berkeley.edu/) |
-|Oct 1999 - July 2004 | B.A. - Philosophy @ [Bogazici University](https://www.boun.edu.tr) |	
+* 2017  Copy editing @ [UC Berkeley Extension](https://extension.berkeley.edu/) 
+* Oct 1999 - July 2004  B.A. - Philosophy @ [Bogazici University](https://www.boun.edu.tr)
 
 ### Certifications
 * Advanced Prompt Engineering @ Coursera
