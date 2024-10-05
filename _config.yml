@@ -1,25 +1,58 @@
 # Site settings
 title: Tuncay Kayaoglu - Technical Writer
-email: "https://tunc-ay.github.io"
+email: tuncaykayaoglu@yahoo.com  # Use actual email instead of website URL
 description: >-
-  Personal website for Tuncay Kayaoglu
-baseurl: "" # Leave this empty for user sites
+  Technical writer specializing in software documentation, API documentation, 
+  and user guides. Experienced in creating clear, concise, and user-friendly documentation.
+baseurl: "" # Leave empty for user sites
 url: "https://tunc-ay.github.io"
 
+# Social links
+twitter_username: tunkay
+github_username: tunc-ay
+linkedin_username: tuncaykayaoglu
+
+# Navigation
 include:
   - _pages
 
 header_pages:
-  - "About"
-  - "Projects"
-  - "Contact"
+  - _pages/about.md
+  - _pages/portfolio.md
+  - _pages/blog.md
+  - _pages/contact.md
 
 # Build settings
 markdown: kramdown
 theme: minima
+
+# Plugin settings
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap  # Good for SEO
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Default front matter settings
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Tuncay Kayaoglu"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
 
 # Exclude these files from production site
 exclude:
@@ -30,3 +63,11 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - README.md
+  - CNAME
+  - .gitignore
+  - .sass-cache/
+
+# SEO settings
+lang: en
+author: Tuncay Kayaoglu
