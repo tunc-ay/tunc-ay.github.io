@@ -17,10 +17,10 @@ include:
   - _pages
 
 header_pages:
-  - _pages/about.md
-  - _pages/portfolio.md
-  - _pages/blog.md
-  - _pages/contact.md
+  - about.md
+  - projects.md
+  - blog.md
+  - contact.md
 
 # Build settings
 markdown: kramdown
