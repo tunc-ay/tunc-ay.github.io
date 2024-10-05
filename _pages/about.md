@@ -13,7 +13,6 @@ Specialized in creating high-quality technical documentation, content, and blogs
 ## Resume
 
 ### Work Experience
-
 | Year                | Title                                                                 |
 | ------------------- | --------------------------------------------------------------------- |
 | June 2023 - Present | Lead Technical Writer @ [Analog Devices](https://www.analog.com)      |
