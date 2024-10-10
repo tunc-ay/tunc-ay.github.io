@@ -21,7 +21,6 @@ header_pages:
   - about.md
   - projects.md
   - blog.md
-  - contact.md
 
 # Build settings
 markdown: kramdown

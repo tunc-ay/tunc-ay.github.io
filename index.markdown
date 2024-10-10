@@ -8,5 +8,4 @@ I'm Tuncay Kayaoglu, a technical writer specializing in software documentation, 
 ## Featured Work
 - [Project Documentation](/projects)
 - [About Me](/about)
-- [Contact](/contact)
 - [Blog](/blog)
