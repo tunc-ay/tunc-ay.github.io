@@ -13,16 +13,16 @@ Specialized in creating high-quality technical documentation, content, and blogs
 ## Resume
 
 ### Work Experience
-| Year                | Title                                                                 |
-| ------------------- | --------------------------------------------------------------------- |
-| June 2023 - Present | Lead Technical Writer @ [Analog Devices](https://www.analog.com)      |
-| Mar 2021 - June 2023 | Senior Technical Writer @ [Invicti](https://www.invicti.com)         |
-| Jan 2020 - Mar 2021 | Technical Writer @ [Invicti](https://www.invicti.com)                |
-| Nov 2018 - Jan 2020  | Freelance Content Editor @ Content Go                               |
-| Aug 2014 - Jan 2020  | Contributing Editor @ [SiberBulten](http://siberbulten.com)          |
-| Aug 2013 - Aug 2016  | Senior Reporter @ [Anadolu Agency](https://www.aa.com.tr/en)         |
-| Aug 2012 - Aug 2013  | Tokyo Correspondent - Freelance                                      |
-| Jul 2004 - Aug 2012  | Journalist                                                          |
+| Year                 | Title                                                                 |
+| -------------------  | --------------------------------------------------------------------- |
+| June 2023 - Present  | Lead Technical Writer @ [Analog Devices](https://www.analog.com)      |
+| Mar 2021 - June 2023 | Senior Technical Writer @ [Invicti](https://www.invicti.com)          |
+| Jan 2020 - Mar 2021  | Technical Writer @ [Invicti](https://www.invicti.com)                 |
+| Nov 2018 - Jan 2020  | Freelance Content Editor @ Content Go                                 |
+| Aug 2014 - Jan 2020  | Contributing Editor @ [SiberBulten](http://siberbulten.com)           |
+| Aug 2013 - Aug 2016  | Senior Reporter @ [Anadolu Agency](https://www.aa.com.tr/en)          |
+| Aug 2012 - Aug 2013  | Tokyo Correspondent - Freelance                                       |
+| Jul 2004 - Aug 2012  | Journalist                                                            |
 
 ### Education
 * 2017  Copy editing @ [UC Berkeley Extension](https://extension.berkeley.edu/) 
