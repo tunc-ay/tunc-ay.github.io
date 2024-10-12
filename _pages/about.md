@@ -13,16 +13,49 @@ Specialized in creating high-quality technical documentation, content, and blogs
 ## Resume
 
 ### Work Experience
-| Year                 | Title                                                                 |
-|----------------------|----------------------------------------------------------------------|
-| June 2023 - Present  | Lead Technical Writer @ [Analog Devices](https://www.analog.com)      |
-| Mar 2021 - June 2023 | Senior Technical Writer @ [Invicti](https://www.invicti.com)          |
-| Jan 2020 - Mar 2021  | Technical Writer @ [Invicti](https://www.invicti.com)                 |
-| Nov 2018 - Jan 2020  | Freelance Content Editor @ Content Go                                 |
-| Aug 2014 - Jan 2020  | Contributing Editor @ [SiberBulten](http://siberbulten.com)           |
-| Aug 2013 - Aug 2016  | Senior Reporter @ [Anadolu Agency](https://www.aa.com.tr/en)          |
-| Aug 2012 - Aug 2013  | Tokyo Correspondent - Freelance                                       |
-| Jul 2004 - Aug 2012  | Journalist                                                            |
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>June 2023 - Present</td>
+      <td>Lead Technical Writer @ <a href="https://www.analog.com">Analog Devices</a></td>
+    </tr>
+    <tr>
+      <td>Mar 2021 - June 2023</td>
+      <td>Senior Technical Writer @ <a href="https://www.invicti.com">Invicti</a></td>
+    </tr>
+    <tr>
+      <td>Jan 2020 - Mar 2021</td>
+      <td>Technical Writer @ <a href="https://www.invicti.com">Invicti</a></td>
+    </tr>
+    <tr>
+      <td>Nov 2018 - Jan 2020</td>
+      <td>Freelance Content Editor @ Content Go</td>
+    </tr>
+    <tr>
+      <td>Aug 2014 - Jan 2020</td>
+      <td>Contributing Editor @ <a href="http://siberbulten.com">SiberBulten</a></td>
+    </tr>
+    <tr>
+      <td>Aug 2013 - Aug 2016</td>
+      <td>Senior Reporter @ <a href="https://www.aa.com.tr/en">Anadolu Agency</a></td>
+    </tr>
+    <tr>
+      <td>Aug 2012 - Aug 2013</td>
+      <td>Tokyo Correspondent - Freelance</td>
+    </tr>
+    <tr>
+      <td>Jul 2004 - Aug 2012</td>
+      <td>Journalist</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### Education
 * 2017  Copy editing @ [UC Berkeley Extension](https://extension.berkeley.edu/) 
