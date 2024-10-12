@@ -14,7 +14,7 @@ Specialized in creating high-quality technical documentation, content, and blogs
 
 ### Work Experience
 | Year                 | Title                                                                 |
-| -------------------  | --------------------------------------------------------------------- |
+|----------------------|----------------------------------------------------------------------|
 | June 2023 - Present  | Lead Technical Writer @ [Analog Devices](https://www.analog.com)      |
 | Mar 2021 - June 2023 | Senior Technical Writer @ [Invicti](https://www.invicti.com)          |
 | Jan 2020 - Mar 2021  | Technical Writer @ [Invicti](https://www.invicti.com)                 |
