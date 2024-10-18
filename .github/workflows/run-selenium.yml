@@ -3,19 +3,20 @@ name: Run Selenium on Website Update
 on:
   push:
     branches:
-      - main  # Trigger on pushes to the main branch
+      - main
 
 jobs:
   selenium:
-    runs-on: ubuntu-latest  # Use a Linux virtual machine
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3  # Clone the repository
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.x  # Use a compatible Python version
+          python-version: 3.x
 
       - name: Install Dependencies
         run: |
@@ -25,3 +26,14 @@ jobs:
       - name: Run Selenium Script
         run: |
           python screenshots.py
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and Push Screenshots
+        run: |
+          git add screenshots/
+          git commit -m "Add new screenshots"
+          git push origin main
