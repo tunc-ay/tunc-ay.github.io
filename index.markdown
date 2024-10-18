@@ -3,11 +3,28 @@ layout: home
 title: Welcome
 ---
 
-I'm Tuncay Kayaoglu, a technical writer specializing in software documentation, API documentation, and user guides. Experienced in creating clear, concise, and user-friendly documentation.
+<div class="welcome-section">
+  <h2>Hello. My name is Tuncay Kayaoglu</h2>
+  <p>I am a <strong>technical writer</strong> specializing in:</p>
+  <ul>
+    <li>Software documentation</li>
+    <li>API documentation</li>
+    <li>User guides</li>
+  </ul>
+  <p>I am experienced in creating <em>clear, concise, and user-friendly</em> documentation.</p>
+</div>
+<hr>
+<div class="project_documentation">
+  <h2><a href="/projects">Documentation Portfolio</a></h2>
+</div>
 
----
-# Featured Work
-## [Project Documentation](/projects)
-## [About Me](/about)
-## [Contact](/contact.html)
----
+<div class="about">
+  <h2><a href="/about">About Me</a></h2>
+</div>
+
+<div class="contact">
+  <h2><a href="/contact.html">Contact</a></h2>
+</div>
+
+<hr>
+
