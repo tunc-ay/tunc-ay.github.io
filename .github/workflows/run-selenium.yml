@@ -1,0 +1,27 @@
+name: Run Selenium on Website Update
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+
+jobs:
+  selenium:
+    runs-on: ubuntu-latest  # Use a Linux virtual machine
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  # Clone the repository
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x  # Use a compatible Python version
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install selenium webdriver-manager beautifulsoup4 requests
+
+      - name: Run Selenium Script
+        run: |
+          python screenshots.py
