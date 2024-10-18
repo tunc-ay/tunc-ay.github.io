@@ -18,12 +18,12 @@ title: Welcome
   <h2><a href="/projects">Documentation Portfolio</a></h2>
 </div>
 
-<div class="about">
-  <h2><a href="/about">About Me</a></h2>
-</div>
-
 <div class="contact">
   <h2><a href="/contact.html">Contact</a></h2>
+</div>
+
+<div class="about">
+  <h2><a href="/about">About Me</a></h2>
 </div>
 
 <hr>
