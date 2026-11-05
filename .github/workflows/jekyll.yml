@@ -28,7 +28,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7.4' # Using an older, more stable version
+          ruby-version: '2.7' # Latest 2.7.x available on the runner
           bundler-cache: false  # Disable cache temporarily for debugging
         
       - name: Setup Pages
