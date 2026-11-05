@@ -20,7 +20,7 @@ breadcrumbs: false
 author:
   name: Tuncay Kayaoglu
   avatar: /assets/images/profile.jpg
-  bio: Lead Technical Writer. I turn complex software and hardware into clear, usable documentation.
+  bio: "Lead Technical Writer at Analog Devices. Start with the reader, understand what they need, and make the complex clear."
   links:
     - label: Email
       icon: fas fa-fw fa-envelope-square

@@ -6,7 +6,11 @@ toc: false
 
 ## Lead Technical Writer
 
-I specialize in creating high-quality technical documentation, content, and blogs that simplify complex concepts for diverse audiences. I develop user manuals, API reference documentation (REST API), and step-by-step tutorials, and I produce engaging technical blogs and articles.
+I’m a Lead Technical Writer at Analog Devices, where I’ve been documenting microcontrollers since June 2023. I’ve worked on products including the MAX32690, MAX32675C, and MAX32657/MAX32658, translating complex engineering information into documentation that helps people understand and use the technology.
+
+My work goes beyond individual products. I create onboarding resources for new team members, manage our Jira/Confluence content, improve documentation workflows, and explore how AI and automation can make technical writing more efficient and scalable. I’m also passionate about knowledge sharing and finding better ways for technical writers to collaborate.
+
+Before moving into technical writing, I worked as a journalist and editor. That background still shapes how I approach documentation today: start with the reader, understand what they need, and make the complex clear.
 
 ## Work experience
 

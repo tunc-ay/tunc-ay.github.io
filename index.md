@@ -14,10 +14,12 @@ intro:
   - image_path: /assets/images/profile.jpg
     alt: "Photo of Tuncay Kayaoglu"
     title: "Hello, I'm Tuncay"
-    excerpt: >-
-      I'm a **lead technical writer** at Analog Devices. I write software documentation,
-      REST API references, and user guides. Before technical writing I was a journalist and editor,
-      and I still write the same way: start with what the reader needs.
+    excerpt: |-
+      I’m a Lead Technical Writer at Analog Devices, where I’ve been documenting microcontrollers since June 2023. I’ve worked on products including the MAX32690, MAX32675C, and MAX32657/MAX32658, translating complex engineering information into documentation that helps people understand and use the technology.
+
+      My work goes beyond individual products. I create onboarding resources for new team members, manage our Jira/Confluence content, improve documentation workflows, and explore how AI and automation can make technical writing more efficient and scalable. I’m also passionate about knowledge sharing and finding better ways for technical writers to collaborate.
+
+      Before moving into technical writing, I worked as a journalist and editor. That background still shapes how I approach documentation today: start with the reader, understand what they need, and make the complex clear.
     url: "/about/"
     btn_label: "More about me"
     btn_class: "btn--primary"
