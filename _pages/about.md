@@ -63,7 +63,7 @@ Specialized in creating high-quality technical documentation, content, and blogs
 
 ### Certifications
 * Advanced Prompt Engineering @ Coursera
-* Programming for Everybody (Getting Started w ith Python) @ Coursera - University of Michigan
+* Programming for Everybody (Getting Started with Python) @ Coursera - University of Michigan
 * Fundamentals of API Documentation @ Tech Writer's Tribe
 * Learn API Technical Writing 2: REST for Writers @ Udemy
 * Git and GitHub for Writers @ Udemy
@@ -73,5 +73,5 @@ Specialized in creating high-quality technical documentation, content, and blogs
 ### Languages
 * English: Fluent
 * Turkish: Native
-* Germany: Beginner
+* German: Beginner
 * Japanese: Upper Beginner

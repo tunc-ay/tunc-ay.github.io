@@ -18,9 +18,9 @@ include:
 
 # Navigation links
 header_pages:
-  - about.md
-  - projects.md
-  - blog.md
+  - _pages/about.md
+  - _pages/projects.md
+  - contact.html
 
 # Build settings
 markdown: kramdown

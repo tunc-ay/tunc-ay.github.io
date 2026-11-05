@@ -1,136 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        #contact-form {
-            display: flex;
-            flex-direction: column;
-        }
-        input, textarea {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        textarea {
-            height: 150px;
-        }
-        button {
-            padding: 10px;
-            background-color: #f2f3f2;
-            color: rgb(6, 1, 1);
-            border: none;
-            border-radius: 4px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #aac3ab;
-        }
-        #status-message {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-            font-weight: bold;
-        }
-        .success {
-            background-color: #d4edda;
-            color: #155724;
-        }
-        .error {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Contact Me</h1>
-        <form id="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <div id="status-message" class="hidden"></div>
-    </div>
+---
+layout: page
+title: Contact
+permalink: /contact.html
+---
 
-    <script>
-        const form = document.getElementById('contact-form');
-        const statusMessage = document.getElementById('status-message');
+<style>
+    .contact-container {
+        max-width: 600px;
+    }
+    #contact-form {
+        display: flex;
+        flex-direction: column;
+    }
+    #contact-form input,
+    #contact-form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        font-family: inherit;
+    }
+    #contact-form textarea {
+        height: 150px;
+    }
+    #contact-form button {
+        padding: 10px;
+        background-color: #f2f3f2;
+        color: rgb(6, 1, 1);
+        border: none;
+        border-radius: 4px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+    #contact-form button:hover {
+        background-color: #aac3ab;
+    }
+    #status-message {
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: bold;
+    }
+    #status-message.success {
+        background-color: #d4edda;
+        color: #155724;
+    }
+    #status-message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+    #status-message.hidden {
+        display: none;
+    }
+</style>
 
-        form.addEventListener('submit', handleSubmit);
+<div class="contact-container">
+    <p>Have a question or a documentation project in mind? Send me a message.</p>
+    <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" aria-label="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" aria-label="Your Email" required>
+        <textarea name="message" placeholder="Your Message" aria-label="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <div id="status-message" class="hidden" role="status"></div>
+</div>
 
-        async function handleSubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(form);
-            
-            // Disable the submit button and show "Sending..." text
-            const submitButton = form.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.textContent;
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
+<script>
+    const form = document.getElementById('contact-form');
+    const statusMessage = document.getElementById('status-message');
 
-            try {
-                const response = await fetch('https://formspree.io/f/mbljjkyv', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                if (response.ok) {
-                    showStatus('Thanks for your message!', 'success');
-                    form.reset();
-                } else {
-                    showStatus('Oops! There was a problem submitting your message', 'error');
+    form.addEventListener('submit', handleSubmit);
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+
+        // Disable the submit button and show "Sending..." text
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
+        try {
+            const response = await fetch('https://formspree.io/f/mbljjkyv', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
                 }
-            } catch (error) {
+            });
+            if (response.ok) {
+                showStatus('Thanks for your message!', 'success');
+                form.reset();
+            } else {
                 showStatus('Oops! There was a problem submitting your message', 'error');
-            } finally {
-                // Re-enable the submit button and restore original text
-                submitButton.disabled = false;
-                submitButton.textContent = originalButtonText;
             }
+        } catch (error) {
+            showStatus('Oops! There was a problem submitting your message', 'error');
+        } finally {
+            // Re-enable the submit button and restore original text
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
         }
+    }
 
-        function showStatus(message, type) {
-            statusMessage.textContent = message;
-            statusMessage.className = type;
-            statusMessage.classList.remove('hidden');
+    function showStatus(message, type) {
+        statusMessage.textContent = message;
+        statusMessage.className = type;
 
-            // Hide the status message after 5 seconds
-            setTimeout(() => {
-                statusMessage.classList.add('hidden');
-            }, 5000);
-        }
-    </script>
-</body>
-</html>
+        // Hide the status message after 5 seconds
+        setTimeout(() => {
+            statusMessage.className = 'hidden';
+        }, 5000);
+    }
+</script>
