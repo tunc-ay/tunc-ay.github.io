@@ -1,84 +1,89 @@
 # Site settings
 title: Tuncay Kayaoglu
+name: Tuncay Kayaoglu
 email: tuncaykayaoglu@yahoo.com
 description: >-
-  Technical writer specializing in software documentation, API documentation,
-  and user guides. Experienced in creating clear, concise, and user-friendly documentation.
-baseurl: ""
+  Lead technical writer specializing in software documentation, API documentation,
+  and user guides. Clear, concise, and user-friendly documentation for complex products.
 url: "https://tunc-ay.github.io"
+baseurl: ""
+locale: en-US
+repository: tunc-ay/tunc-ay.github.io
 
-# Social links
-twitter_username: tunkay
-github_username: tunc-ay
-linkedin_username: tuncaykayaoglu
+# Theme
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: air
+search: true
+breadcrumbs: false
 
-# Navigation
+# Author sidebar
+author:
+  name: Tuncay Kayaoglu
+  avatar: /assets/images/profile.jpg
+  bio: Lead Technical Writer. I turn complex software and hardware into clear, usable documentation.
+  links:
+    - label: Email
+      icon: fas fa-fw fa-envelope-square
+      url: mailto:tuncaykayaoglu@yahoo.com
+    - label: LinkedIn
+      icon: fab fa-fw fa-linkedin
+      url: https://www.linkedin.com/in/tuncaykayaoglu
+    - label: GitHub
+      icon: fab fa-fw fa-github
+      url: https://github.com/tunc-ay
+
+footer:
+  links:
+    - label: LinkedIn
+      icon: fab fa-fw fa-linkedin
+      url: https://www.linkedin.com/in/tuncaykayaoglu
+    - label: GitHub
+      icon: fab fa-fw fa-github
+      url: https://github.com/tunc-ay
+
+# Content
 include:
   - _pages
 
-# Navigation links
-header_pages:
-  - _pages/about.md
-  - _pages/projects.md
-  - contact.html
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: false
+      related: false
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
 # Build settings
 markdown: kramdown
-theme: minima
-
-# Plugin settings
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-include-cache
 
-# Collections
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
+# SEO
+social:
+  name: Tuncay Kayaoglu
+  links:
+    - https://www.linkedin.com/in/tuncaykayaoglu
+    - https://github.com/tunc-ay
 
-# Default front matter settings
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "Tuncay Kayaoglu"
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-
-# Exclude these files from production site
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor
   - README.md
-  - CNAME
-  - .gitignore
+  - LICENSE
+  - .vscode
   - .sass-cache/
-
-# SEO settings
-lang: en
-author: Tuncay Kayaoglu
-
-# Optional: Add these for better SEO
-twitter:
-  username: tunkay
-  card: summary
-social:
-  name: Tuncay Kayaoglu
-  links:
-    - https://twitter.com/tunkay
-    - https://www.linkedin.com/in/tuncaykayaoglu
-    - https://github.com/tunc-ay
+  - .jekyll-cache/

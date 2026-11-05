@@ -1,10 +1,18 @@
 source "https://rubygems.org"
 
-# Force gh-pages to use a specific Jekyll version that's known to work
-gem "jekyll", "~> 3.9.3"
-gem "github-pages", group: :jekyll_plugins
+gem "jekyll", "~> 4.3"
+gem "minimal-mistakes-jekyll", "~> 4.26"
+
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+  gem "jekyll-include-cache"
+end
+
+# Needed for `jekyll serve` on Ruby 3+
 gem "webrick"
 
-# Add these dependencies explicitly
-gem "kramdown-parser-gfm"
-gem "nokogiri", "~> 1.15.4"
+# Windows: timezone data and CSV (no longer a default gem in newer Ruby)
+gem "tzinfo-data", platforms: [:mingw, :x64_mingw, :mswin]
+gem "csv"

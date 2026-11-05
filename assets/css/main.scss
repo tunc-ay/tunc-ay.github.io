@@ -1,0 +1,115 @@
+---
+# Front matter needed so Jekyll processes this file
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* ---------- Site-specific tweaks ---------- */
+
+$accent: #1f3a5f;
+$accent-light: #5fb6d6;
+
+/* Homepage hero: a bit more presence */
+.page__hero--overlay {
+  background-image: linear-gradient(135deg, #1f3a5f 0%, #24515e 100%);
+  padding: 4em 0;
+
+  .page__title {
+    font-size: $type-size-2;
+  }
+  .page__lead {
+    max-width: 640px;
+  }
+}
+
+/* Intro row on the homepage: round profile photo */
+#main .feature__wrapper .feature__item--left .archive__item-teaser {
+  max-width: 260px;
+  margin: 0 auto;
+
+  img {
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Section headings on splash pages */
+.section-title {
+  margin-top: 1.5em;
+  padding-bottom: 0.3em;
+  border-bottom: 3px solid $accent-light;
+  display: inline-block;
+}
+
+.section-cta {
+  text-align: center;
+  margin: 1em 0 3em;
+}
+
+/* Project cards: lift on hover */
+.feature__item .archive__item {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border-radius: 6px;
+}
+.feature__item:not(.feature__item--left) .archive__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+.feature__item .archive__item-teaser img {
+  border-radius: 6px;
+}
+
+/* Resume timeline on the About page */
+.timeline {
+  list-style: none;
+  margin: 1em 0 2em;
+  padding-left: 1.5em;
+  border-left: 3px solid mix(#fff, $accent-light, 50%);
+
+  li {
+    position: relative;
+    margin-bottom: 1.25em;
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: calc(-1.5em - 8px);
+      top: 0.35em;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: $accent-light;
+      border: 2px solid #fff;
+    }
+  }
+}
+.timeline__date {
+  font-size: $type-size-6;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: $gray;
+}
+.timeline__role {
+  font-weight: bold;
+  font-size: $type-size-4;
+}
+.timeline__org {
+  font-size: $type-size-5;
+}
+
+/* Footer in the site's navy instead of the skin's bright blue */
+.page__footer {
+  background-color: $accent;
+  color: #e6edf3;
+
+  a,
+  .page__footer-follow .social-icons .svg-inline--fa,
+  .page__footer-follow .social-icons i {
+    color: #e6edf3;
+  }
+}
