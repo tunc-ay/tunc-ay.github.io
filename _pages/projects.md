@@ -25,7 +25,7 @@ api:
     alt: "MAX32690 FTHR board documentation"
     title: "FTHR Board Documentation"
     excerpt: "Evaluation kit documentation for the MAX32690 FTHR microcontroller board."
-    url: "https://dqcjuy6a7j5d6.cloudfront.net/solutions/max32690/MAX32690FTHR_Evkit_10_8_2024.pdf"
+    url: "https://developer.analog.com/api/media/file/2026-02-16-max32690fthr-evkit-27y1ty.pdf"
     btn_label: "Read (PDF)"
     btn_class: "btn--primary"
 
