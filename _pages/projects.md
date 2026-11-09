@@ -53,22 +53,30 @@ guides:
     btn_class: "btn--primary"
 
 mcu:
-  - title: "MAX32690 Datasheet"
+  - image_path: /assets/images/projects/max32690-datasheet.png
+    alt: "MAX32690 Datasheet"
+    title: "MAX32690 Datasheet"
     excerpt: "Datasheet for the MAX32690 Arm Cortex-M4 microcontroller with Bluetooth LE 5. [Product page](https://www.analog.com/en/products/max32690.html)"
     url: "https://www.analog.com/media/en/technical-documentation/data-sheets/max32690.pdf"
     btn_label: "Read (PDF)"
     btn_class: "btn--primary"
-  - title: "MAX32690 User Guide"
+  - image_path: /assets/images/projects/max32690-user-guide.png
+    alt: "MAX32690 User Guide"
+    title: "MAX32690 User Guide"
     excerpt: "User guide for the MAX32690 microcontroller. [Product page](https://www.analog.com/en/products/max32690.html)"
     url: "https://www.analog.com/media/en/technical-documentation/user-guides/ug7618.pdf"
     btn_label: "Read (PDF)"
     btn_class: "btn--primary"
-  - title: "MAX32675C User Guide"
+  - image_path: /assets/images/projects/max32675c-user-guide.png
+    alt: "MAX32675C User Guide"
+    title: "MAX32675C User Guide"
     excerpt: "User guide for the MAX32675C ultra-low-power microcontroller. [Product page](https://www.analog.com/en/products/max32675c.html)"
     url: "https://www.analog.com/media/en/technical-documentation/user-guides/max32675c-user-guide.pdf"
     btn_label: "Read (PDF)"
     btn_class: "btn--primary"
-  - title: "MAX32657 User Guide"
+  - image_path: /assets/images/projects/max32657-user-guide.png
+    alt: "MAX32657 User Guide"
+    title: "MAX32657 User Guide"
     excerpt: "Documentation for the MAX32657 microcontroller. [Product page](https://www.analog.com/en/products/max32657.html)"
     url: "https://www.analog.com/media/en/technical-documentation/data-sheets/max32657.pdf"
     btn_label: "Read (PDF)"
