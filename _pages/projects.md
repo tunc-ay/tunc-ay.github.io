@@ -51,7 +51,33 @@ guides:
     url: "/assets/projects/VulnerabilitySeverityLevels.pdf"
     btn_label: "Read (PDF)"
     btn_class: "btn--primary"
+
+mcu:
+  - title: "MAX32690 Datasheet"
+    excerpt: "Datasheet for the MAX32690 Arm Cortex-M4 microcontroller with Bluetooth LE 5. [Product page](https://www.analog.com/en/products/max32690.html)"
+    url: "https://www.analog.com/media/en/technical-documentation/data-sheets/max32690.pdf"
+    btn_label: "Read (PDF)"
+    btn_class: "btn--primary"
+  - title: "MAX32690 User Guide"
+    excerpt: "User guide for the MAX32690 microcontroller. [Product page](https://www.analog.com/en/products/max32690.html)"
+    url: "https://www.analog.com/media/en/technical-documentation/user-guides/ug7618.pdf"
+    btn_label: "Read (PDF)"
+    btn_class: "btn--primary"
+  - title: "MAX32675C User Guide"
+    excerpt: "User guide for the MAX32675C ultra-low-power microcontroller. [Product page](https://www.analog.com/en/products/max32675c.html)"
+    url: "https://www.analog.com/media/en/technical-documentation/user-guides/max32675c-user-guide.pdf"
+    btn_label: "Read (PDF)"
+    btn_class: "btn--primary"
+  - title: "MAX32657 User Guide"
+    excerpt: "Documentation for the MAX32657 microcontroller. [Product page](https://www.analog.com/en/products/max32657.html)"
+    url: "https://www.analog.com/media/en/technical-documentation/data-sheets/max32657.pdf"
+    btn_label: "Read (PDF)"
+    btn_class: "btn--primary"
 ---
+
+<h2 class="section-title">Microcontroller datasheets and user guides</h2>
+
+{% include feature_row id="mcu" %}
 
 <h2 class="section-title">API and hardware documentation</h2>
 
