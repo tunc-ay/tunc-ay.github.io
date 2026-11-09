@@ -45,7 +45,22 @@ footer:
 include:
   - _pages
 
+collections:
+  visuals:
+    output: true
+    permalink: /visuals/:path/
+
 defaults:
+  - scope:
+      path: ""
+      type: visuals
+    values:
+      layout: single
+      author_profile: false
+      toc: true
+      toc_label: "On this page"
+      share: false
+      classes: wide
   - scope:
       path: ""
       type: posts

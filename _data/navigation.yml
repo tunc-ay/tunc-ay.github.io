@@ -1,6 +1,8 @@
 main:
   - title: "Portfolio"
     url: /projects/
+  - title: "How it works"
+    url: /visuals/
   - title: "About"
     url: /about/
   - title: "Contact"

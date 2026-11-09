@@ -81,6 +81,15 @@ mcu:
     url: "https://www.analog.com/media/en/technical-documentation/data-sheets/max32657.pdf"
     btn_label: "Read (PDF)"
     btn_class: "btn--primary"
+
+visuals:
+  - image_path: /assets/images/visuals/how-uart-works.svg
+    alt: "Diagram showing how a UART sends the byte 0x55"
+    title: "How UART Works"
+    excerpt: "Illustrated explainer that follows one byte through a UART link. First in a series on MCU peripherals."
+    url: "/visuals/uart/"
+    btn_label: "View"
+    btn_class: "btn--primary"
 ---
 
 <h2 class="section-title">Microcontroller datasheets and user guides</h2>
@@ -94,3 +103,9 @@ mcu:
 <h2 class="section-title">Guides and explanations</h2>
 
 {% include feature_row id="guides" %}
+
+<h2 class="section-title">Visual explainers</h2>
+
+{% include feature_row id="visuals" %}
+
+<p class="section-cta"><a href="/visuals/" class="btn btn--inverse btn--large">See the full series</a></p>

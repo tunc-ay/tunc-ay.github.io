@@ -1,0 +1,248 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1130" width="1536" height="1130" role="img" aria-labelledby="t d" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">How UART works: sending the byte 0x55 over a serial line</title>
+  <desc id="d">Device A sends the byte 0x55 to Device B over a single TX-to-RX wire with a common ground. The waveform shows the 10-bit 8N1 frame: idle high, a start bit of 0, eight data bits sent least significant bit first (1 0 1 0 1 0 1 0), and a stop bit of 1. The receiver samples each bit in the middle of its bit period. Five steps explain the process: parallel to serial, serial transmission, reception and sampling, serial to parallel, and data received.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+    </marker>
+  </defs>
+
+  <style>
+    .bg { fill: #ffffff; }
+    .ink { fill: #1b2733; }
+    .navy { fill: #1f3a5f; }
+    .muted { fill: #5b6b7b; }
+    .h1 { font-size: 38px; font-weight: 700; text-anchor: middle; }
+    .sub { font-size: 20px; text-anchor: middle; }
+    .pin { font-size: 17px; font-weight: 700; }
+    .small { font-size: 15px; }
+    .body { font-size: 15px; }
+    .card-title { font-size: 17px; font-weight: 700; }
+    .val { font-size: 22px; font-weight: 700; text-anchor: middle; }
+    .mid { text-anchor: middle; }
+    .end { text-anchor: end; }
+    .wire { stroke: #1b2733; stroke-width: 2.5; fill: none; }
+    .tx { stroke: #1f6fd1; stroke-width: 3; fill: none; }
+    .signal { stroke: #1f5fbf; stroke-width: 3.5; fill: none; stroke-linejoin: miter; }
+    .grid { stroke: #b8c2cc; stroke-width: 1.2; stroke-dasharray: 5 5; }
+    .sample { fill: #d96a00; stroke: #ffffff; stroke-width: 1.5; }
+  </style>
+
+  <rect class="bg" width="1536" height="1130"/>
+
+  <!-- Title -->
+  <text class="h1 navy" x="768" y="48">UART (Universal Asynchronous Receiver/Transmitter)</text>
+  <text class="h1 navy" x="768" y="92">Working Diagram</text>
+  <text class="sub ink" x="768" y="130">UART lets two devices communicate serially (one bit at a time) without a shared clock.</text>
+  <text class="sub ink" x="768" y="158">Both sides must use the same baud rate (e.g., 9600 baud), data bits, parity, and stop bits.</text>
+
+  <!-- ============ Connection ============ -->
+  <!-- Data byte in -->
+  <rect x="10" y="263" width="140" height="80" rx="8" fill="#e0f3ee" stroke="#6fb8a8" stroke-width="1.5"/>
+  <text class="ink mid" x="80" y="296" font-size="19" font-weight="600">Data byte</text>
+  <text class="ink mid" x="80" y="320" font-size="16">(e.g., 0x55)</text>
+  <line class="wire" x1="150" y1="303" x2="199" y2="303" marker-end="url(#arrow)" stroke="#1b2733"/>
+
+  <!-- Device A -->
+  <rect x="170" y="180" width="310" height="210" rx="6" fill="#dbe8fb" stroke="#4a78b8" stroke-width="2"/>
+  <text class="ink mid" x="325" y="214" font-size="26" font-weight="700">Device A</text>
+  <text class="ink mid" x="325" y="241" font-size="18">(sending)</text>
+  <rect x="200" y="258" width="250" height="90" rx="4" fill="#1f4e8c"/>
+  <text x="325" y="296" text-anchor="middle" font-size="19" font-weight="600" fill="#ffffff">UART Tx logic</text>
+  <text x="325" y="321" text-anchor="middle" font-size="17" fill="#ffffff">(parallel to serial)</text>
+
+  <!-- Device B -->
+  <rect x="1056" y="180" width="310" height="210" rx="6" fill="#e1f2e3" stroke="#5a9a63" stroke-width="2"/>
+  <text class="ink mid" x="1211" y="214" font-size="26" font-weight="700">Device B</text>
+  <text class="ink mid" x="1211" y="241" font-size="18">(receiving)</text>
+  <rect x="1086" y="258" width="250" height="90" rx="4" fill="#1e5a33"/>
+  <text x="1211" y="296" text-anchor="middle" font-size="19" font-weight="600" fill="#ffffff">UART Rx logic</text>
+  <text x="1211" y="321" text-anchor="middle" font-size="17" fill="#ffffff">(serial to parallel)</text>
+
+  <!-- Received byte -->
+  <line class="wire" x1="1336" y1="303" x2="1379" y2="303" marker-end="url(#arrow)" stroke="#1b2733"/>
+  <rect x="1380" y="263" width="146" height="80" rx="8" fill="#e0f3ee" stroke="#6fb8a8" stroke-width="1.5"/>
+  <text class="ink mid" x="1453" y="296" font-size="19" font-weight="600">Received byte</text>
+  <text class="ink mid" x="1453" y="320" font-size="16">(0x55)</text>
+
+  <!-- Wires -->
+  <text class="muted mid" x="768" y="222" font-size="18">Serial communication (over a wire)</text>
+  <text class="pin" x="495" y="246" fill="#1f6fd1">TX (A)</text>
+  <text class="pin end" x="1041" y="246" fill="#1e5a33">RX (B)</text>
+  <line class="tx" x1="480" y1="255" x2="1055" y2="255" marker-end="url(#arrow)" stroke="#1f6fd1"/>
+
+  <text class="pin" x="495" y="297" fill="#8a96a3">RX (A)</text>
+  <text class="pin end" x="1041" y="297" fill="#8a96a3">TX (B)</text>
+  <text class="muted mid" x="768" y="297" font-size="15" font-style="italic">Return path (B → A): not used in this example</text>
+  <line x1="1055" y1="305" x2="481" y2="305" stroke="#8a96a3" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+
+  <text class="pin" x="495" y="347" fill="#1b2733">GND</text>
+  <text class="pin end" x="1041" y="347" fill="#1b2733">GND</text>
+  <text class="muted mid" x="768" y="347" font-size="15" font-style="italic">Common ground</text>
+  <line class="wire" x1="480" y1="355" x2="1056" y2="355"/>
+
+  <!-- ============ Waveform panel ============ -->
+  <rect x="10" y="405" width="1516" height="307" rx="8" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text class="ink" x="30" y="436" font-size="22" font-weight="700">Example: transmitting 0x55 (0101 0101) with 8N1</text>
+  <text class="muted" x="30" y="456" font-size="15">(8 data bits, no parity, 1 stop bit)</text>
+
+  <!-- start / stop bands -->
+  <rect x="290" y="452" width="66" height="160" fill="#fbe0dc"/>
+  <rect x="884" y="452" width="66" height="160" fill="#fbe0dc"/>
+
+  <!-- bit boundaries -->
+  <path class="grid" d="M290 452V645M356 452V645M422 452V645M488 452V645M554 452V645M620 452V645M686 452V645M752 452V645M818 452V645M884 452V645M950 452V645"/>
+
+  <!-- headers -->
+  <text class="ink mid" x="245" y="468" font-size="14" font-weight="600">Idle</text>
+  <text class="ink mid" x="245" y="486" font-size="14">(High)</text>
+  <text class="ink mid" x="323" y="468" font-size="14" font-weight="600">Start bit</text>
+  <text class="ink mid" x="323" y="486" font-size="14">(0)</text>
+  <text class="ink mid" x="917" y="468" font-size="14" font-weight="600">Stop bit</text>
+  <text class="ink mid" x="917" y="486" font-size="14">(1)</text>
+  <text class="ink mid" x="1020" y="468" font-size="14" font-weight="600">Idle</text>
+  <text class="ink mid" x="1020" y="486" font-size="14">(High)</text>
+  <text class="ink mid" x="620" y="470" font-size="17" font-weight="600">Data bits (LSB first)</text>
+  <path d="M358 482H882M358 477V487M882 477V487" stroke="#8a96a3" stroke-width="1.5" fill="none"/>
+
+  <!-- bit values -->
+  <g class="val ink">
+    <text x="389" y="526">1</text><text x="455" y="526">0</text>
+    <text x="521" y="526">1</text><text x="587" y="526">0</text>
+    <text x="653" y="526">1</text><text x="719" y="526">0</text>
+    <text x="785" y="526">1</text><text x="851" y="526">0</text>
+  </g>
+  <!-- bit indexes -->
+  <g class="muted mid" font-size="15">
+    <text x="389" y="636">D0</text><text x="455" y="636">D1</text>
+    <text x="521" y="636">D2</text><text x="587" y="636">D3</text>
+    <text x="653" y="636">D4</text><text x="719" y="636">D5</text>
+    <text x="785" y="636">D6</text><text x="851" y="636">D7</text>
+  </g>
+
+  <!-- axis labels -->
+  <text class="ink" x="20" y="567" font-size="16" font-weight="600">UART TX line</text>
+  <text class="muted" x="20" y="587" font-size="14">(logic level)</text>
+  <text class="ink end" x="190" y="546" font-size="15">1 (High)</text>
+  <text class="ink end" x="190" y="606" font-size="15">0 (Low)</text>
+  <path d="M194 540H200M194 600H200" stroke="#8a96a3" stroke-width="1.5"/>
+
+  <!-- waveform: idle, start 0, 1 0 1 0 1 0 1 0, stop 1, idle -->
+  <path class="signal" d="M200 540 H290 V600 H356 V540 H422 V600 H488 V540 H554 V600 H620 V540 H686 V600 H752 V540 H818 V600 H884 V540 H1090"/>
+
+  <!-- sample points (middle of each bit) -->
+  <g class="sample">
+    <circle cx="323" cy="600" r="6"/><circle cx="389" cy="540" r="6"/>
+    <circle cx="455" cy="600" r="6"/><circle cx="521" cy="540" r="6"/>
+    <circle cx="587" cy="600" r="6"/><circle cx="653" cy="540" r="6"/>
+    <circle cx="719" cy="600" r="6"/><circle cx="785" cy="540" r="6"/>
+    <circle cx="851" cy="600" r="6"/><circle cx="917" cy="540" r="6"/>
+  </g>
+
+  <!-- bit time -->
+  <line x1="292" y1="656" x2="354" y2="656" stroke="#1b2733" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text class="ink mid" x="323" y="678" font-size="15">Bit time</text>
+  <text class="ink mid" x="323" y="696" font-size="14">(1 / baud rate)</text>
+
+  <!-- legend + time -->
+  <circle class="sample" cx="500" cy="686" r="6"/>
+  <text class="ink" x="514" y="691" font-size="15">Receiver sample point (middle of each bit)</text>
+  <text class="ink end" x="1085" y="665" font-size="16">Time →</text>
+
+  <!-- key points -->
+  <rect x="1120" y="420" width="396" height="280" rx="8" fill="#fdf1d6" stroke="#e5c27a" stroke-width="1.5"/>
+  <text class="ink" x="1138" y="449" font-size="20" font-weight="700">Key points</text>
+  <g class="ink body">
+    <text x="1138" y="476">• Line is idle (high) when no data is sent.</text>
+    <text x="1138" y="500">• Start bit (0) tells the receiver that a</text>
+    <text x="1152" y="521">byte is coming.</text>
+    <text x="1138" y="545">• Data bits are sent LSB first.</text>
+    <text x="1138" y="569">• Optional parity bit can be used for</text>
+    <text x="1152" y="590">error checking.</text>
+    <text x="1138" y="614">• Stop bit (1) marks the end of the frame.</text>
+    <text x="1138" y="638">• Both devices must use the same baud</text>
+    <text x="1152" y="659">rate. At 9600 baud, one bit lasts</text>
+    <text x="1152" y="680">≈ 104 µs (1 / 9600).</text>
+  </g>
+
+  <!-- ============ Steps ============ -->
+  <text class="ink" x="10" y="752" font-size="26" font-weight="700">Step-by-step working</text>
+
+  <!-- Card 1 -->
+  <rect x="10" y="772" width="292" height="268" rx="8" fill="#e3edfb"/>
+  <circle cx="44" cy="808" r="17" fill="#1f3a5f"/>
+  <text x="44" y="815" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">1</text>
+  <text class="navy card-title" x="72" y="814">Parallel to serial</text>
+  <g class="ink body">
+    <text x="28" y="856">The transmitter takes a byte</text>
+    <text x="28" y="877">(e.g., 0x55 = 0101 0101) from</text>
+    <text x="28" y="898">the processor and converts it</text>
+    <text x="28" y="919">to a serial frame. It adds a</text>
+    <text x="28" y="940">start bit and a stop bit (and</text>
+    <text x="28" y="961">a parity bit, if enabled).</text>
+  </g>
+
+  <!-- Card 2 -->
+  <rect x="316" y="772" width="292" height="268" rx="8" fill="#e1f2e3"/>
+  <circle cx="350" cy="808" r="17" fill="#1e5a33"/>
+  <text x="350" y="815" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">2</text>
+  <text class="card-title" x="378" y="814" fill="#1e5a33">Serial transmission</text>
+  <g class="ink body">
+    <text x="334" y="856">Bits are sent one at a time</text>
+    <text x="334" y="877">over the TX line at a fixed</text>
+    <text x="334" y="898">baud rate. The line is idle</text>
+    <text x="334" y="919">high. The start bit is low,</text>
+    <text x="334" y="940">followed by the data bits</text>
+    <text x="334" y="961">(LSB first) and then the stop</text>
+    <text x="334" y="982">bit, which is high.</text>
+  </g>
+
+  <!-- Card 3 -->
+  <rect x="622" y="772" width="292" height="268" rx="8" fill="#fbe3e8"/>
+  <circle cx="656" cy="808" r="17" fill="#8a1c3a"/>
+  <text x="656" y="815" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">3</text>
+  <text class="card-title" x="684" y="814" fill="#8a1c3a">Reception and sampling</text>
+  <g class="ink body">
+    <text x="640" y="856">The receiver detects the</text>
+    <text x="640" y="877">falling edge of the start bit</text>
+    <text x="640" y="898">and then samples the line in</text>
+    <text x="640" y="919">the middle of each bit period,</text>
+    <text x="640" y="940">using its own baud-rate clock.</text>
+    <text x="640" y="961">Many receivers sample at 16×</text>
+    <text x="640" y="982">the baud rate to find that</text>
+    <text x="640" y="1003">midpoint.</text>
+  </g>
+
+  <!-- Card 4 -->
+  <rect x="928" y="772" width="292" height="268" rx="8" fill="#ebe5fa"/>
+  <circle cx="962" cy="808" r="17" fill="#43308a"/>
+  <text x="962" y="815" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">4</text>
+  <text class="card-title" x="990" y="814" fill="#43308a">Serial to parallel</text>
+  <g class="ink body">
+    <text x="946" y="856">The receiver reconstructs the</text>
+    <text x="946" y="877">byte from the received bits</text>
+    <text x="946" y="898">and checks the stop bit (and</text>
+    <text x="946" y="919">parity, if used). If the stop</text>
+    <text x="946" y="940">bit is not 1, it reports a</text>
+    <text x="946" y="961">framing error. Otherwise it</text>
+    <text x="946" y="982">passes the byte to its</text>
+    <text x="946" y="1003">processor.</text>
+  </g>
+
+  <!-- Card 5 -->
+  <rect x="1234" y="772" width="292" height="268" rx="8" fill="#dff3f1"/>
+  <circle cx="1268" cy="808" r="17" fill="#0f5c58"/>
+  <text x="1268" y="815" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">5</text>
+  <text class="card-title" x="1296" y="814" fill="#0f5c58">Data received</text>
+  <g class="ink body">
+    <text x="1252" y="856">The byte (0x55) is now</text>
+    <text x="1252" y="877">available at the receiver</text>
+    <text x="1252" y="898">side.</text>
+  </g>
+
+  <!-- Footer -->
+  <rect x="10" y="1060" width="1516" height="60" rx="6" fill="#dff3f1" stroke="#7fbfb8" stroke-width="1.5"/>
+  <text class="ink mid" x="768" y="1086" font-size="18" font-weight="600">UART provides simple, point-to-point serial communication with no shared clock.</text>
+  <text class="ink mid" x="768" y="1109" font-size="16">Two-way communication uses two signal lines (TX and RX) plus a common ground.</text>
+</svg>
