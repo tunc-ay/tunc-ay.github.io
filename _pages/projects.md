@@ -4,7 +4,7 @@ title: "Portfolio"
 permalink: /projects/
 header:
   overlay_color: "#1f3a5f"
-excerpt: "Writing samples covering tutorials, API documentation, conceptual explanations, and hardware guides."
+excerpt: "Documenting user guide and datasheet for MCUs and writing tutorials, API documentation, conceptual explanations, and hardware guides."
 
 api:
   - image_path: /assets/images/projects/api-overview.png
