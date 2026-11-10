@@ -40,20 +40,6 @@ Before moving into technical writing, I worked as a journalist and editor. That 
     <span class="timeline__role">Contributing Editor</span>
     <span class="timeline__org"><a href="http://siberbulten.com">SiberBulten</a></span>
   </li>
-  <li>
-    <span class="timeline__date">Aug 2013 – Aug 2016</span>
-    <span class="timeline__role">Senior Reporter</span>
-    <span class="timeline__org"><a href="https://www.aa.com.tr/en">Anadolu Agency</a></span>
-  </li>
-  <li>
-    <span class="timeline__date">Aug 2012 – Aug 2013</span>
-    <span class="timeline__role">Tokyo Correspondent</span>
-    <span class="timeline__org">Freelance</span>
-  </li>
-  <li>
-    <span class="timeline__date">Jul 2004 – Aug 2012</span>
-    <span class="timeline__role">Journalist</span>
-  </li>
 </ul>
 
 ## Education
