@@ -29,9 +29,9 @@ UART (Universal Asynchronous Receiver/Transmitter) sends data one bit at a time 
 
 Sending `0x55` (`0101 0101`) with 8N1 (8 data bits, no parity, 1 stop bit), the line carries this sequence:
 
-| Slot  | Start | D0 | D1 | D2 | D3 | D4 | D5 | D6 | D7 | Stop |
-| ----- | ----- | -- | -- | -- | -- | -- | -- | -- | -- | ---- |
-| Level | 0     | 1  | 0  | 1  | 0  | 1  | 0  | 1  | 0  | 1    |
+| Slot  | Start | D0  | D1  | D2  | D3  | D4  | D5  | D6  | D7  | Stop |
+| ----- | ----- | --- | --- | --- | --- | --- | --- | --- | --- | ---- |
+| Level | 0     | 1   | 0   | 1   | 0   | 1   | 0   | 1   | 0   | 1    |
 
 The frame is 10 bit times long. At 9600 baud, one bit lasts 1 / 9600 ≈ 104 µs, so the whole frame takes about 1.04 ms.
 
