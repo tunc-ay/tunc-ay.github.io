@@ -1,0 +1,32 @@
+{%- comment -%}
+  Previous / next links for the "How it works" series.
+  Uses the `order` front-matter value. Include at the bottom of each _visuals page:
+  {% include visuals-nav.html %}
+{%- endcomment -%}
+{%- assign series = site.visuals | sort: "order" -%}
+{%- assign prev_page = nil -%}
+{%- assign next_page = nil -%}
+{%- for item in series -%}
+  {%- if item.url == page.url -%}
+    {%- unless forloop.first -%}
+      {%- assign prev_index = forloop.index0 | minus: 1 -%}
+      {%- assign prev_page = series[prev_index] -%}
+    {%- endunless -%}
+    {%- unless forloop.last -%}
+      {%- assign next_index = forloop.index0 | plus: 1 -%}
+      {%- assign next_page = series[next_index] -%}
+    {%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<nav class="visuals-nav" aria-label="More explainers in this series">
+  <a class="visuals-nav__all" href="{{ '/visuals/' | relative_url }}">All explainers</a>
+  <span class="visuals-nav__links">
+    {%- if prev_page -%}
+      <a class="visuals-nav__prev" href="{{ prev_page.url | relative_url }}" rel="prev"><span aria-hidden="true">&larr;</span> {{ prev_page.title }}</a>
+    {%- endif -%}
+    {%- if next_page -%}
+      <a class="visuals-nav__next" href="{{ next_page.url | relative_url }}" rel="next">{{ next_page.title }} <span aria-hidden="true">&rarr;</span></a>
+    {%- endif -%}
+  </span>
+</nav>

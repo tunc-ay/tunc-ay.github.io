@@ -31,6 +31,7 @@ Illustrated explainers on how MCU peripherals work (UART done; I2C, SPI, and oth
 To add a peripheral:
 1. Put the SVG in `assets/images/visuals/<name>.svg`.
 2. Create `_visuals/<name>.md` with `title`, `order` (next number), `excerpt`, and `header.teaser`. Copy the structure of [_visuals/uart.md](_visuals/uart.md): the figure with `alt` text, a numbered walkthrough, the waveform or timing in a text table, and "Things to remember".
+   Start with a "← All explainers" link (`<p class="visuals-back">`) and end the page with `{% include visuals-nav.html %}`, which builds previous/next links from `order`.
 3. Add a card to the `visuals` list in [_pages/projects.md](_pages/projects.md).
 
 Diagram conventions, so the series looks consistent:
