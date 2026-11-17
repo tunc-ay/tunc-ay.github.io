@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1010" width="1536" height="1010" role="img" aria-labelledby="can-title can-desc" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <title id="can-title">How CAN works: one frame from Node A to the other nodes on the bus</title>
+  <desc id="can-desc">Three CAN nodes share a two-wire differential bus, CAN_H and CAN_L, with a 120 ohm termination resistor at each end. Each node has a controller and a transceiver, connected by a TX signal (blue) and an RX signal (green). Node A sends a classical CAN frame with identifier 0x123, data length 1 and data byte 0x55, at 500 kbit/s. A waveform shows the frame bit by bit: idle, start of frame 0, identifier 0 0 1 0 0 1 0 0 0 1 1, RTR IDE r0 all 0, data length code 0 0 then a recessive stuff bit 1 then 0 1, data 0 1 0 1 0 1 0 1, 15 CRC bits, CRC delimiter, ACK slot, ACK delimiter, 7 EOF bits and 3 intermission bits. In the ACK slot Node A sends 1 and the receivers drive the bus to 0. Five numbered steps explain the process: build the frame, win arbitration, drive the bus, receive and check, acknowledge and accept.</desc>
+
+  <defs>
+    <marker id="arrTX" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f6fd1"/>
+    </marker>
+    <marker id="arrRX" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1e5a33"/>
+    </marker>
+    <pattern id="bitgrid" x="55" y="568" width="25" height="204" patternUnits="userSpaceOnUse">
+      <line x1="0.5" y1="0" x2="0.5" y2="204" stroke="#d5dbe6" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect x="0" y="0" width="1536" height="1010" fill="#ffffff"/>
+
+  <!-- Title and legend -->
+  <text x="56" y="56" font-size="32" font-weight="700" fill="#1f3a5f">How CAN works</text>
+  <text x="56" y="88" font-size="16" fill="#333">One classical CAN frame (ID 0x123, one data byte 0x55) at 500 kbit/s, from Node A to every other node on the bus.</text>
+  <line x1="1060" y1="46" x2="1096" y2="46" stroke="#1f6fd1" stroke-width="4"/>
+  <text x="1106" y="51" font-size="14" fill="#333">TX: controller to transceiver</text>
+  <line x1="1060" y1="72" x2="1096" y2="72" stroke="#1e5a33" stroke-width="4"/>
+  <text x="1106" y="77" font-size="14" fill="#333">RX: transceiver to controller</text>
+
+  <!-- Panel 1: topology -->
+  <text x="56" y="124" font-size="19" font-weight="700" fill="#1f3a5f">Nodes share one differential bus, and every node hears every frame</text>
+
+  <!-- Bus -->
+  <line x1="90" y1="170" x2="1446" y2="170" stroke="#333" stroke-width="3"/>
+  <line x1="90" y1="210" x2="1446" y2="210" stroke="#777" stroke-width="3"/>
+  <text x="130" y="160" font-size="14" font-weight="700" fill="#333">CAN_H</text>
+  <text x="130" y="232" font-size="14" font-weight="700" fill="#555">CAN_L</text>
+
+  <!-- Terminators -->
+  <line x1="90" y1="170" x2="90" y2="178" stroke="#333" stroke-width="3"/>
+  <rect x="82" y="178" width="16" height="24" fill="#fff" stroke="#333" stroke-width="2"/>
+  <line x1="90" y1="202" x2="90" y2="210" stroke="#777" stroke-width="3"/>
+  <text x="90" y="152" font-size="13" text-anchor="middle" fill="#333">120 Ω</text>
+  <line x1="1446" y1="170" x2="1446" y2="178" stroke="#333" stroke-width="3"/>
+  <rect x="1438" y="178" width="16" height="24" fill="#fff" stroke="#333" stroke-width="2"/>
+  <line x1="1446" y1="202" x2="1446" y2="210" stroke="#777" stroke-width="3"/>
+  <text x="1446" y="152" font-size="13" text-anchor="middle" fill="#333">120 Ω</text>
+
+  <!-- Step 3 badge on the bus -->
+  <circle cx="660" cy="190" r="13" fill="#1f3a5f"/>
+  <text x="660" y="195" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">3</text>
+
+  <!-- Node A -->
+  <circle cx="124" cy="258" r="12" fill="#1f3a5f"/>
+  <text x="124" y="263" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">1</text>
+  <text x="144" y="263" font-size="16" font-weight="700" fill="#1f3a5f">Node A (transmitter)</text>
+  <rect x="110" y="270" width="400" height="150" rx="6" fill="#fafbfd" stroke="#1f3a5f" stroke-width="1.5"/>
+  <rect x="122" y="288" width="190" height="112" rx="4" fill="#fff" stroke="#1f3a5f" stroke-width="1.5"/>
+  <text x="134" y="310" font-size="15" font-weight="700" fill="#1f3a5f">Controller</text>
+  <text x="134" y="332" font-size="12" fill="#333">Mailbox: ID 0x123</text>
+  <text x="134" y="350" font-size="12" fill="#333">DLC 1, data 0x55</text>
+  <text x="134" y="368" font-size="12" fill="#333">CRC-15 + bit stuffing</text>
+  <text x="134" y="386" font-size="12" fill="#333">16 tq per bit</text>
+  <rect x="372" y="288" width="126" height="112" rx="4" fill="#fff" stroke="#1f3a5f" stroke-width="1.5"/>
+  <text x="435" y="310" font-size="15" font-weight="700" text-anchor="middle" fill="#1f3a5f">Transceiver</text>
+  <text x="435" y="336" font-size="12" text-anchor="middle" fill="#333">Drives the bus</text>
+  <text x="435" y="354" font-size="12" text-anchor="middle" fill="#333">and reads it</text>
+  <text x="435" y="372" font-size="12" text-anchor="middle" fill="#333">back</text>
+  <line x1="312" y1="335" x2="372" y2="335" stroke="#1f6fd1" stroke-width="3" marker-end="url(#arrTX)"/>
+  <text x="338" y="327" font-size="12" font-weight="700" text-anchor="middle" fill="#1f6fd1">TX</text>
+  <line x1="372" y1="372" x2="312" y2="372" stroke="#1e5a33" stroke-width="3" marker-end="url(#arrRX)"/>
+  <text x="338" y="389" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5a33">RX</text>
+  <line x1="405" y1="288" x2="405" y2="170" stroke="#333" stroke-width="3"/>
+  <circle cx="405" cy="170" r="5" fill="#333"/>
+  <line x1="465" y1="288" x2="465" y2="210" stroke="#777" stroke-width="3"/>
+  <circle cx="465" cy="210" r="5" fill="#777"/>
+
+  <!-- Node B -->
+  <circle cx="582" cy="258" r="12" fill="#1f3a5f"/>
+  <text x="582" y="263" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">4</text>
+  <text x="602" y="263" font-size="16" font-weight="700" fill="#1f3a5f">Node B (receiver)</text>
+  <rect x="568" y="270" width="400" height="150" rx="6" fill="#fafbfd" stroke="#1f3a5f" stroke-width="1.5"/>
+  <rect x="580" y="288" width="190" height="112" rx="4" fill="#fff" stroke="#1f3a5f" stroke-width="1.5"/>
+  <text x="592" y="310" font-size="15" font-weight="700" fill="#1f3a5f">Controller</text>
+  <text x="592" y="332" font-size="12" fill="#333">Samples at tq 14 of 16</text>
+  <text x="592" y="350" font-size="12" fill="#333">Destuffs, checks CRC-15</text>
+  <text x="592" y="368" font-size="12" fill="#333">Drives ACK slot to 0</text>
+  <text x="592" y="386" font-size="12" fill="#333">Filter 0x123: accepted</text>
+  <rect x="830" y="288" width="126" height="112" rx="4" fill="#fff" stroke="#1f3a5f" stroke-width="1.5"/>
+  <text x="893" y="310" font-size="15" font-weight="700" text-anchor="middle" fill="#1f3a5f">Transceiver</text>
+  <text x="893" y="336" font-size="12" text-anchor="middle" fill="#333">Reads CAN_H − CAN_L</text>
+  <text x="893" y="354" font-size="12" text-anchor="middle" fill="#333">and can drive</text>
+  <text x="893" y="372" font-size="12" text-anchor="middle" fill="#333">the ACK slot</text>
+  <line x1="770" y1="335" x2="830" y2="335" stroke="#1f6fd1" stroke-width="3" marker-end="url(#arrTX)"/>
+  <text x="796" y="327" font-size="12" font-weight="700" text-anchor="middle" fill="#1f6fd1">TX</text>
+  <line x1="830" y1="372" x2="770" y2="372" stroke="#1e5a33" stroke-width="3" marker-end="url(#arrRX)"/>
+  <text x="796" y="389" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5a33">RX</text>
+  <line x1="863" y1="288" x2="863" y2="170" stroke="#333" stroke-width="3"/>
+  <circle cx="863" cy="170" r="5" fill="#333"/>
+  <line x1="923" y1="288" x2="923" y2="210" stroke="#777" stroke-width="3"/>
+  <circle cx="923" cy="210" r="5" fill="#777"/>
+
+  <!-- Node C -->
+  <circle cx="1040" cy="258" r="12" fill="#1f3a5f"/>
+  <text x="1040" y="263" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">4</text>
+  <text x="1060" y="263" font-size="16" font-weight="700" fill="#1f3a5f">Node C (receiver)</text>
+  <rect x="1026" y="270" width="400" height="150" rx="6" fill="#fafbfd" stroke="#1f3a5f" stroke-width="1.5"/>
+  <rect x="1038" y="288" width="190" height="112" rx="4" fill="#fff" stroke="#1f3a5f" stroke-width="1.5"/>
+  <text x="1050" y="310" font-size="15" font-weight="700" fill="#1f3a5f">Controller</text>
+  <text x="1050" y="332" font-size="12" fill="#333">Samples at tq 14 of 16</text>
+  <text x="1050" y="350" font-size="12" fill="#333">Destuffs, checks CRC-15</text>
+  <text x="1050" y="368" font-size="12" fill="#333">Drives ACK slot to 0</text>
+  <text x="1050" y="386" font-size="12" fill="#333">Filter: no match, ignored</text>
+  <rect x="1288" y="288" width="126" height="112" rx="4" fill="#fff" stroke="#1f3a5f" stroke-width="1.5"/>
+  <text x="1351" y="310" font-size="15" font-weight="700" text-anchor="middle" fill="#1f3a5f">Transceiver</text>
+  <text x="1351" y="336" font-size="12" text-anchor="middle" fill="#333">Reads CAN_H − CAN_L</text>
+  <text x="1351" y="354" font-size="12" text-anchor="middle" fill="#333">and can drive</text>
+  <text x="1351" y="372" font-size="12" text-anchor="middle" fill="#333">the ACK slot</text>
+  <line x1="1228" y1="335" x2="1288" y2="335" stroke="#1f6fd1" stroke-width="3" marker-end="url(#arrTX)"/>
+  <text x="1254" y="327" font-size="12" font-weight="700" text-anchor="middle" fill="#1f6fd1">TX</text>
+  <line x1="1288" y1="372" x2="1228" y2="372" stroke="#1e5a33" stroke-width="3" marker-end="url(#arrRX)"/>
+  <text x="1254" y="389" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5a33">RX</text>
+  <line x1="1321" y1="288" x2="1321" y2="170" stroke="#333" stroke-width="3"/>
+  <circle cx="1321" cy="170" r="5" fill="#333"/>
+  <line x1="1381" y1="288" x2="1381" y2="210" stroke="#777" stroke-width="3"/>
+  <circle cx="1381" cy="210" r="5" fill="#777"/>
+
+  <text x="56" y="446" font-size="13" fill="#333">Typical levels, 5 V transceiver. Dominant (0): CAN_H ≈ 3.5 V, CAN_L ≈ 1.5 V. Recessive (1): both ≈ 2.5 V. If any node drives dominant, the bus is dominant.</text>
+
+  <!-- Panel 2: frame -->
+  <text x="56" y="486" font-size="19" font-weight="700" fill="#1f3a5f">The frame on the wire (500 kbit/s: 2 µs per bit, 53 bits ≈ 106 µs, then 3 intermission bits)</text>
+
+  <!-- Step 2 badge and note -->
+  <circle cx="242.5" cy="516" r="12" fill="#1f3a5f"/>
+  <text x="242.5" y="521" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">2</text>
+  <text x="262" y="521" font-size="12" fill="#333">Arbitration happens in these bits: a node that sends 1 but reads 0 stops.</text>
+
+  <!-- Field boxes -->
+  <g stroke="#1f3a5f" stroke-width="1" fill="#eef2f8">
+    <rect x="55" y="530" width="25" height="28"/>
+    <rect x="80" y="530" width="25" height="28"/>
+    <rect x="105" y="530" width="275" height="28"/>
+    <rect x="380" y="530" width="75" height="28"/>
+    <rect x="455" y="530" width="125" height="28"/>
+    <rect x="580" y="530" width="200" height="28"/>
+    <rect x="780" y="530" width="375" height="28"/>
+    <rect x="1155" y="530" width="25" height="28"/>
+    <rect x="1180" y="530" width="25" height="28" fill="#dcefe0"/>
+    <rect x="1205" y="530" width="25" height="28"/>
+    <rect x="1230" y="530" width="175" height="28"/>
+    <rect x="1405" y="530" width="75" height="28"/>
+  </g>
+  <g fill="#1f3a5f" text-anchor="middle" font-size="12">
+    <text x="67.5" y="548" font-size="10">idle</text>
+    <text x="92.5" y="548" font-size="10">SOF</text>
+    <text x="242.5" y="548">ID 0x123, 11 bits, MSB first</text>
+    <text x="417.5" y="548" font-size="11">RTR IDE r0</text>
+    <text x="517.5" y="548">DLC = 1 (4 bits)</text>
+    <text x="680" y="548">Data: 0x55, MSB first</text>
+    <text x="967.5" y="548">CRC-15: 0x2363</text>
+    <text x="1167.5" y="548" font-size="10">del</text>
+    <text x="1192.5" y="548" font-size="10">ACK</text>
+    <text x="1217.5" y="548" font-size="10">del</text>
+    <text x="1317.5" y="548">EOF: 7 recessive bits</text>
+    <text x="1442.5" y="548" font-size="10">intermission</text>
+  </g>
+
+  <!-- Highlights: stuff bit and ACK slot -->
+  <rect x="505" y="568" width="25" height="204" fill="#fff1b8"/>
+  <rect x="1180" y="568" width="25" height="204" fill="#dcefe0"/>
+
+  <!-- Bit grid -->
+  <rect x="55" y="568" width="1425" height="204" fill="url(#bitgrid)"/>
+  <line x1="1480.5" y1="568" x2="1480.5" y2="772" stroke="#d5dbe6" stroke-width="1"/>
+
+  <!-- Row labels -->
+  <text x="55" y="582" font-size="13" font-weight="700" fill="#1f6fd1" stroke="#fff" stroke-width="4" paint-order="stroke">Node A TX pin: the bits Node A sends</text>
+  <text x="55" y="684" font-size="13" font-weight="700" fill="#1e5a33" stroke="#fff" stroke-width="4" paint-order="stroke">RX pin of every node: the bus. Same bits, but the receivers pull the ACK slot to 0</text>
+
+  <!-- Waveform: Node A TX (high y=600, low y=640) -->
+  <path d="M55,600 H80 V640 H155 V600 H180 V640 H230 V600 H255 V640 H330 V600 H380 V640 H505 V600 H530 V640 H555 V600 H580 V640 H605 V600 H630 V640 H655 V600 H680 V640 H705 V600 H730 V640 H755 V600 H780 V640 H805 V600 H830 V640 H905 V600 H955 V640 H980 V600 H1030 V640 H1105 V600 H1480" fill="none" stroke="#1f6fd1" stroke-width="3"/>
+
+  <!-- Waveform: bus / receiver RX (high y=700, low y=740) -->
+  <path d="M55,700 H80 V740 H155 V700 H180 V740 H230 V700 H255 V740 H330 V700 H380 V740 H505 V700 H530 V740 H555 V700 H580 V740 H605 V700 H630 V740 H655 V700 H680 V740 H705 V700 H730 V740 H755 V700 H780 V740 H805 V700 H830 V740 H905 V700 H955 V740 H980 V700 H1030 V740 H1105 V700 H1180 V740 H1205 V700 H1480" fill="none" stroke="#1e5a33" stroke-width="3"/>
+
+  <!-- Bit values, one per 25 px slot (57 slots) -->
+  <text font-family="Consolas, Menlo, 'Courier New', monospace" font-size="15" fill="#222" text-anchor="middle" y="764"
+        x="67.5 92.5 117.5 142.5 167.5 192.5 217.5 242.5 267.5 292.5 317.5 342.5 367.5 392.5 417.5 442.5 467.5 492.5 517.5 542.5 567.5 592.5 617.5 642.5 667.5 692.5 717.5 742.5 767.5 792.5 817.5 842.5 867.5 892.5 917.5 942.5 967.5 992.5 1017.5 1042.5 1067.5 1092.5 1117.5 1142.5 1167.5 1192.5 1217.5 1242.5 1267.5 1292.5 1317.5 1342.5 1367.5 1392.5 1417.5 1442.5 1467.5">10001001000110000010101010101010001101100011101111111111111</text>
+
+  <!-- Callouts -->
+  <line x1="517.5" y1="772" x2="517.5" y2="784" stroke="#555" stroke-width="1.5"/>
+  <text x="517.5" y="800" font-size="13" text-anchor="middle" fill="#333">stuff bit (inserted 1)</text>
+  <line x1="1192.5" y1="772" x2="1192.5" y2="784" stroke="#555" stroke-width="1.5"/>
+  <circle cx="1192.5" cy="799" r="13" fill="#1f3a5f"/>
+  <text x="1192.5" y="804" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">5</text>
+  <text x="1172" y="804" font-size="13" text-anchor="end" fill="#333">ACK slot: Node A sends 1, every receiver that got a valid frame drives it to 0</text>
+  <text x="55" y="830" font-size="13" fill="#333">Bit values are read from the bus. 0 = dominant, 1 = recessive. del = delimiter (always recessive).</text>
+
+  <!-- Panel 3: five steps -->
+  <g>
+    <rect x="56" y="850" width="264" height="135" rx="6" fill="#f6f8fb" stroke="#1f3a5f" stroke-width="1.2"/>
+    <circle cx="82" cy="880" r="13" fill="#1f3a5f"/>
+    <text x="82" y="885" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">1</text>
+    <text x="104" y="886" font-size="16" font-weight="700" fill="#1f3a5f">Build the frame</text>
+    <text x="72" y="914" font-size="12.5" fill="#333">The controller loads the mailbox,</text>
+    <text x="72" y="934" font-size="12.5" fill="#333">computes the CRC-15, inserts stuff</text>
+    <text x="72" y="954" font-size="12.5" fill="#333">bits, and waits for bus idle.</text>
+
+    <rect x="346" y="850" width="264" height="135" rx="6" fill="#f6f8fb" stroke="#1f3a5f" stroke-width="1.2"/>
+    <circle cx="372" cy="880" r="13" fill="#1f3a5f"/>
+    <text x="372" y="885" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">2</text>
+    <text x="394" y="886" font-size="16" font-weight="700" fill="#1f3a5f">Win arbitration</text>
+    <text x="362" y="914" font-size="12.5" fill="#333">Each node reads back every ID bit</text>
+    <text x="362" y="934" font-size="12.5" fill="#333">it sends. A node that sends 1 but</text>
+    <text x="362" y="954" font-size="12.5" fill="#333">reads 0 stops: lowest ID wins.</text>
+
+    <rect x="636" y="850" width="264" height="135" rx="6" fill="#f6f8fb" stroke="#1f3a5f" stroke-width="1.2"/>
+    <circle cx="662" cy="880" r="13" fill="#1f3a5f"/>
+    <text x="662" y="885" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">3</text>
+    <text x="684" y="886" font-size="16" font-weight="700" fill="#1f3a5f">Drive the bus</text>
+    <text x="652" y="914" font-size="12.5" fill="#333">The transceiver turns each bit into</text>
+    <text x="652" y="934" font-size="12.5" fill="#333">a voltage difference on CAN_H and</text>
+    <text x="652" y="954" font-size="12.5" fill="#333">CAN_L: about 2 V for 0, 0 V for 1.</text>
+
+    <rect x="926" y="850" width="264" height="135" rx="6" fill="#f6f8fb" stroke="#1f3a5f" stroke-width="1.2"/>
+    <circle cx="952" cy="880" r="13" fill="#1f3a5f"/>
+    <text x="952" y="885" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">4</text>
+    <text x="974" y="886" font-size="16" font-weight="700" fill="#1f3a5f">Receive and check</text>
+    <text x="942" y="914" font-size="12.5" fill="#333">Receivers sample near 87.5% of the</text>
+    <text x="942" y="934" font-size="12.5" fill="#333">bit, remove stuff bits, and check</text>
+    <text x="942" y="954" font-size="12.5" fill="#333">the CRC and fixed-form bits.</text>
+
+    <rect x="1216" y="850" width="264" height="135" rx="6" fill="#f6f8fb" stroke="#1f3a5f" stroke-width="1.2"/>
+    <circle cx="1242" cy="880" r="13" fill="#1f3a5f"/>
+    <text x="1242" y="885" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">5</text>
+    <text x="1264" y="886" font-size="16" font-weight="700" fill="#1f3a5f">Acknowledge and accept</text>
+    <text x="1232" y="914" font-size="12.5" fill="#333">Receivers that saw a valid frame</text>
+    <text x="1232" y="934" font-size="12.5" fill="#333">drive the ACK slot to 0. Acceptance</text>
+    <text x="1232" y="954" font-size="12.5" fill="#333">filters then keep or discard it.</text>
+  </g>
+</svg>
