@@ -3,8 +3,14 @@
   <desc id="d">Device A sends the byte 0x55 to Device B over a single TX-to-RX wire with a common ground. The waveform shows the 10-bit 8N1 frame: idle high, a start bit of 0, eight data bits sent least significant bit first (1 0 1 0 1 0 1 0), and a stop bit of 1. The receiver samples each bit in the middle of its bit period. Five steps explain the process: parallel to serial, serial transmission, reception and sampling, serial to parallel, and data received.</desc>
 
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+    <marker id="arrowInk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1b2733"/>
+    </marker>
+    <marker id="arrowTX" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1f6fd1"/>
+    </marker>
+    <marker id="arrowGrey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8a96a3"/>
     </marker>
   </defs>
 
@@ -42,7 +48,7 @@
   <rect x="10" y="263" width="140" height="80" rx="8" fill="#e0f3ee" stroke="#6fb8a8" stroke-width="1.5"/>
   <text class="ink mid" x="80" y="296" font-size="19" font-weight="600">Data byte</text>
   <text class="ink mid" x="80" y="320" font-size="16">(e.g., 0x55)</text>
-  <line class="wire" x1="150" y1="303" x2="199" y2="303" marker-end="url(#arrow)" stroke="#1b2733"/>
+  <line class="wire" x1="150" y1="303" x2="199" y2="303" marker-end="url(#arrowInk)" stroke="#1b2733"/>
 
   <!-- Device A -->
   <rect x="170" y="180" width="310" height="210" rx="6" fill="#dbe8fb" stroke="#4a78b8" stroke-width="2"/>
@@ -61,7 +67,7 @@
   <text x="1211" y="321" text-anchor="middle" font-size="17" fill="#ffffff">(serial to parallel)</text>
 
   <!-- Received byte -->
-  <line class="wire" x1="1336" y1="303" x2="1379" y2="303" marker-end="url(#arrow)" stroke="#1b2733"/>
+  <line class="wire" x1="1336" y1="303" x2="1379" y2="303" marker-end="url(#arrowInk)" stroke="#1b2733"/>
   <rect x="1380" y="263" width="146" height="80" rx="8" fill="#e0f3ee" stroke="#6fb8a8" stroke-width="1.5"/>
   <text class="ink mid" x="1453" y="296" font-size="19" font-weight="600">Received byte</text>
   <text class="ink mid" x="1453" y="320" font-size="16">(0x55)</text>
@@ -70,12 +76,12 @@
   <text class="muted mid" x="768" y="222" font-size="18">Serial communication (over a wire)</text>
   <text class="pin" x="495" y="246" fill="#1f6fd1">TX (A)</text>
   <text class="pin end" x="1041" y="246" fill="#1e5a33">RX (B)</text>
-  <line class="tx" x1="480" y1="255" x2="1055" y2="255" marker-end="url(#arrow)" stroke="#1f6fd1"/>
+  <line class="tx" x1="480" y1="255" x2="1055" y2="255" marker-end="url(#arrowTX)" stroke="#1f6fd1"/>
 
   <text class="pin" x="495" y="297" fill="#8a96a3">RX (A)</text>
   <text class="pin end" x="1041" y="297" fill="#8a96a3">TX (B)</text>
   <text class="muted mid" x="768" y="297" font-size="15" font-style="italic">Return path (B → A): not used in this example</text>
-  <line x1="1055" y1="305" x2="481" y2="305" stroke="#8a96a3" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <line x1="1055" y1="305" x2="481" y2="305" stroke="#8a96a3" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrowGrey)"/>
 
   <text class="pin" x="495" y="347" fill="#1b2733">GND</text>
   <text class="pin end" x="1041" y="347" fill="#1b2733">GND</text>
@@ -141,7 +147,7 @@
   </g>
 
   <!-- bit time -->
-  <line x1="292" y1="656" x2="354" y2="656" stroke="#1b2733" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <line x1="292" y1="656" x2="354" y2="656" stroke="#1b2733" stroke-width="1.8" marker-start="url(#arrowInk)" marker-end="url(#arrowInk)"/>
   <text class="ink mid" x="323" y="678" font-size="15">Bit time</text>
   <text class="ink mid" x="323" y="696" font-size="14">(1 / baud rate)</text>
 

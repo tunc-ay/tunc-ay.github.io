@@ -4,7 +4,7 @@ order: 1
 excerpt: "Follow the byte 0x55 from a transmitter to a receiver, bit by bit."
 header:
   teaser: /assets/images/visuals/how-uart-works.svg
-last_modified_at: 2026-11-11
+last_modified_at: 2026-11-18
 ---
 
 <p class="visuals-back"><a href="{{ '/visuals/' | relative_url }}">&larr; All explainers</a></p>
@@ -68,7 +68,7 @@ The receiver has its own baud-rate generator, running independently of the sende
 | -------------- | -------------------------------------------------------------- | --------------------------------------------------- |
 | Framing error  | Baud rate mismatch, noise, or a line break                     | Stop bit is 0 instead of 1                          |
 | Parity error   | A bit flipped in transit (when parity is enabled)              | Number of 1s does not match the parity setting      |
-| Overrun error  | The processor did not read the previous byte before a new one arrived | The new byte replaces or is lost against the old one |
+| Overrun error  | The processor did not read the previous byte before a new one arrived | The new byte overwrites the old one, or is discarded, depending on the hardware |
 
 ### Why the baud rates must match
 

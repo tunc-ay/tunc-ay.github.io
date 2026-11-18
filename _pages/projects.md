@@ -85,9 +85,16 @@ mcu:
 visuals:
   - image_path: /assets/images/visuals/how-uart-works.svg
     alt: "Diagram showing how a UART sends the byte 0x55"
-    title: "How UART Works"
-    excerpt: "Illustrated explainer that follows one byte through a UART link. First in a series on MCU peripherals."
+    title: "How UART works"
+    excerpt: "Illustrated explainer that follows one byte through a UART link, bit by bit."
     url: "/visuals/uart/"
+    btn_label: "View"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/visuals/how-can-works.svg
+    alt: "Diagram showing how a CAN frame with ID 0x123 and data byte 0x55 travels over a shared bus"
+    title: "How CAN works"
+    excerpt: "Illustrated explainer that follows one CAN frame across a shared bus, including arbitration, bit stuffing, and acknowledgment."
+    url: "/visuals/can/"
     btn_label: "View"
     btn_class: "btn--primary"
 ---

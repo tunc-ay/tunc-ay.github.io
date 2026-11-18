@@ -4,7 +4,7 @@ order: 2
 excerpt: "Follow one message, ID 0x123 carrying the byte 0x55, from a transmitter to every receiver on a CAN bus."
 header:
   teaser: /assets/images/visuals/how-can-works.svg
-last_modified_at: 2026-11-17
+last_modified_at: 2026-11-18
 ---
 
 <p class="visuals-back"><a href="{{ '/visuals/' | relative_url }}">&larr; All explainers</a></p>
@@ -127,7 +127,7 @@ Every node watches every frame, and any node can signal an error.
 | Form error  | Corrupted frame                                                 | A fixed-form bit (delimiter, EOF) has the wrong level                                            |
 | ACK error   | No receiver accepted the frame (no other node, or all in error) | The transmitter sees a recessive bit in the ACK slot                                             |
 
-A node that detects an error sends an **error frame**: six dominant bits, which deliberately violate the stuffing rule so that all other nodes see an error too. The transmitter then resends the frame. Each node keeps a transmit error counter and a receive error counter. A node with a high count becomes _error passive_, and a transmitter whose count exceeds 255 goes _bus-off_ and stops driving the bus. This keeps one faulty node from blocking everyone else.
+A node that detects an error sends an **error frame**: an error flag followed by 8 recessive delimiter bits. A node in the normal (_error active_) state sends six dominant bits as its flag, which deliberately violates the stuffing rule so that all other nodes see an error too. An _error passive_ node sends six recessive bits instead, so it cannot disturb other nodes' traffic. The transmitter then resends the frame. Each node keeps a transmit error counter and a receive error counter. A node whose count exceeds 127 becomes error passive, and a transmitter whose count exceeds 255 goes _bus-off_ and stops driving the bus. This keeps one faulty node from blocking everyone else.
 
 ### Why bit timing and stuffing matter
 
@@ -138,7 +138,7 @@ UART synchronizes once per byte and then relies on its own clock. CAN frames are
 <figure>
   <a href="{{ '/assets/images/visuals/how-can-works.svg' | relative_url }}">
     <img src="{{ '/assets/images/visuals/how-can-works.svg' | relative_url }}"
-         alt="Diagram of three CAN nodes on a shared two-wire bus, with a 120 ohm termination resistor at each end. Node A sends a frame with identifier 0x123 and data byte 0x55. A waveform shows the frame: start bit 0, identifier bits, control bits, data bits, CRC, and the ACK slot driven dominant by a receiver. Five numbered steps explain the process.">
+         alt="Diagram of three CAN nodes on a shared two-wire bus, with a 120 ohm termination resistor at each end. Node A sends a frame with identifier 0x123 and data byte 0x55. A waveform shows the frame bit by bit: start of frame (SOF) 0, the 11 identifier bits, the control bits, the data length code with one inserted recessive stuff bit, data bits 0 1 0 1 0 1 0 1, the 15-bit CRC, and the ACK slot, which Node A sends as 1 and the receivers drive to dominant 0. Five numbered steps explain the process.">
   </a>
   <figcaption>The path of one CAN frame from a transmitting node to the other nodes on the bus. Select the image to open it full size.</figcaption>
 </figure>

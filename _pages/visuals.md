@@ -11,8 +11,8 @@ sort_order: ascending
 excerpt: "A series of illustrated explainers on how common MCU communication blocks work, from the pins to the bits on the wire."
 ---
 
-Each page in this series follows one byte through a peripheral:
+Each page in this series follows one message through a peripheral and shows:
 
-- How the devices are wired,
-- What the signal looks like, and
-- What the hardware does at each step.
+- How the devices are wired
+- What the signal looks like on the wire
+- What the hardware does at each step
